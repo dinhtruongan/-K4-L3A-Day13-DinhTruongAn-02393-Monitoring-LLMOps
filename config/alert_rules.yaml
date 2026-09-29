@@ -1,25 +1,25 @@
 alerts:
-  - name: TODO_alert_1
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: User-visible latency elevated
+    severity: warning
+    condition: 'request_latency_p95_ms > 3000'
+    duration: 5m
     type: symptom-based
-    channel: slack
-    owner: TODO
+    channel: "#day13-llmops-alerts"
+    owner: LLM Platform On-call
     runbook: docs/alerts.md#alert-1
-  - name: TODO_alert_2
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: Request failures elevated
+    severity: critical
+    condition: 'request_error_rate_pct > 2'
+    duration: 5m
     type: symptom-based
-    channel: slack
-    owner: TODO
+    channel: "#day13-llmops-alerts"
+    owner: API On-call
     runbook: docs/alerts.md#alert-2
-  - name: TODO_alert_3
-    severity: TODO
-    condition: TODO
-    duration: TODO
+  - name: Answer quality proxy degraded
+    severity: warning
+    condition: 'quality_score_avg < 0.75'
+    duration: 15m
     type: symptom-based
-    channel: slack
-    owner: TODO
+    channel: "#day13-llmops-alerts"
+    owner: LLM Quality On-call
     runbook: docs/alerts.md#alert-3

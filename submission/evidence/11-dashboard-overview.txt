@@ -1,0 +1,21 @@
+﻿Dashboard runtime snapshot — 2026-09-29 (Asia/Bangkok)
+App: http://localhost:8501/ (Streamlit)
+Window: rolling 60 minutes; refresh: 30 seconds; data source: data/logs.jsonl
+Observed data timestamps: 15:31–16:23
+
+Summary metrics
+- Requests: 42
+- Latency P95: 1,306 ms
+- Error rate: 0.0%
+- Retrieval success: 100.0%
+- Cost: $0.0862
+
+Six visible panels and threshold lines
+1. Latency and TTFT — ms; latency threshold 3,000 ms.
+2. Request traffic — requests/min; threshold 1 request/min.
+3. Errors and retrieval success — percent; error threshold 2%, retrieval SLO 90%.
+4. Cost — USD; threshold $2.50.
+5. Input and output tokens — tokens; threshold 50,000.
+6. Quality proxy — score 0–1; threshold 0.75.
+
+Source: live Streamlit page at localhost:8501. This text records the runtime view; the image screenshot still needs to be saved into submission/evidence for the final upload.

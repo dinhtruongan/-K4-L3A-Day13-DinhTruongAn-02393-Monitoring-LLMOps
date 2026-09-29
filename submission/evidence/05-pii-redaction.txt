@@ -1,0 +1,1 @@
+{"correlation_id": "req-c218f217", "env": "dev", "event": "request_received", "feature": "qa", "level": "info", "model": "claude-sonnet-4-5", "payload": {"message_preview": "What is your refund policy? My email is [REDACTED_EMAIL]"}, "service": "api", "session_id": "s01", "ts": "2026-09-29T08:31:56.946453Z", "user_id_hash": "2055254ee30a"}

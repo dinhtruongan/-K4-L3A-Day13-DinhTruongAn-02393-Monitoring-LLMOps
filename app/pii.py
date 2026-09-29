@@ -5,10 +5,11 @@ import re
 
 PII_PATTERNS: dict[str, str] = {
     "email": r"[\w\.-]+@[\w\.-]+\.\w+",
-    "phone_vn": r"(?<!\d)(?:\+84|0)(?:[ .-]?\d){9}(?!\d)",
-    "cccd": r"\b\d{12}\b",
-    "credit_card": r"\b\d{4}[- ]?\d{4}[- ]?\d{4}[- ]?\d{4}\b",
-    # TODO: Add more patterns (e.g., Passport, Vietnamese address keywords)
+    # Common 10-digit domestic and +84 international Vietnamese phone forms.
+    "phone_vn": r"(?<!\d)(?:\+?84[ .-]?|0)(?:[ .-]?\d){9}(?!\d)",
+    "cccd": r"(?<!\d)\d{12}(?!\d)",
+    # Bank cards may have 13–19 digits, optionally separated by spaces or hyphens.
+    "credit_card": r"(?<!\d)(?:\d[ -]?){12,18}\d(?!\d)",
 }
 
 

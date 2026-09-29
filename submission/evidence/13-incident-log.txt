@@ -1,0 +1,5 @@
+Challenge ID: day13-k4-l3a-monitoring-llmops-v1
+Chosen correlation_id: req-1d98fe1a
+Sanitized structured log events (message previews and user identifiers omitted):
+{"ts": "2026-09-29T09:42:26.651100Z", "event": "request_received", "correlation_id": "req-1d98fe1a", "feature": "monitoring", "model": "claude-sonnet-4-5", "env": "dev"}
+{"ts": "2026-09-29T09:42:31.499747Z", "event": "response_sent", "correlation_id": "req-1d98fe1a", "feature": "monitoring", "model": "claude-sonnet-4-5", "env": "dev", "latency_ms": 3617, "ttft_ms": 50, "tokens_in": 34, "tokens_out": 130, "cost_usd": 0.002052, "quality_score": 0.9, "tool_name": "retrieval", "tool_success": true}

@@ -1,0 +1,23 @@
+﻿CP2 Prompt Versioning — K4-L3A
+Date: 2026-09-29
+Langfuse project: day13-k4-l3a-02393
+Prompt: day13-chat (text)
+
+Version 1
+- Content: Feature={{feature}} / Docs={{docs}} / Question={{message}}
+- Labels after rollback: baseline, production
+
+Version 2
+- Change: added "Answer in no more than three concise bullet points."
+- Preserved variables: feature, docs, message
+- Final label: candidate
+
+Same workload comparison (10 requests each; all HTTP 200):
+- baseline v1: trace 0a9c41bb7c515db3384535795b47270b; correlation_id req-72359bc6; prompt_source=langfuse; prompt_label=baseline; prompt_version=1
+- candidate v2: trace a2c3508288304648499c69751397e482; correlation_id req-55f7856e; prompt_source=langfuse; prompt_label=candidate; prompt_version=2
+
+Promote and rollback using the same first sample request:
+- production promoted to v2: trace 8f21240d71c3d7c6be0372447e61c16e; correlation_id req-4bfa9745; prompt_source=langfuse; prompt_label=production; prompt_version=2
+- production rolled back to v1: trace 8a49eb6f21e9429557f08d5fa0ad85e4; correlation_id req-30945a10; prompt_source=langfuse; prompt_label=production; prompt_version=1
+
+Verified final Langfuse labels: v1 = baseline, production; v2 = candidate. The labels were set in the personal project named above. No API keys or raw user inputs are included.

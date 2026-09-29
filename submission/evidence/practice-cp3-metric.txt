@@ -1,0 +1,10 @@
+PRACTICE ONLY — NOT OFFICIAL K4-L3A CHALLENGE EVIDENCE
+Scenario: rag_slow
+Date: 2026-09-29
+Time window (Asia/Bangkok): 14:42:36–14:43:11
+Panel/signal: API response latency P95 (from /metrics and response_sent log events)
+Baseline P95 before practice: 2512 ms
+Practice-window P95 (10 requests): 3619 ms
+Configured latency threshold: 3000 ms
+Threshold exceeded by: 619 ms (20.6%); increase over recorded baseline: 1107 ms (44.1%)
+Practice workload: 10/10 HTTP 200 responses; zero request errors

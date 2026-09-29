@@ -1,0 +1,12 @@
+Challenge ID: day13-k4-l3a-monitoring-llmops-v1
+Panel: latency P50/P95/P99 (dashboard minute bucket, metric latency_ms)
+Window UTC: 2026-09-29T09:42:26.651100Z to 2026-09-29T09:42:42.137972Z
+Window Asia/Ho_Chi_Minh (UTC+07:00): 2026-09-29 16:42:26 to 16:42:42
+Requests: 5; latency_ms sorted: [2652, 2652, 2653, 2654, 3617]
+P50 nearest-rank/interpolation=nearest: 2653 ms
+P95 nearest-rank/interpolation=nearest: 3617 ms
+P99 nearest-rank/interpolation=nearest: 3617 ms
+Official challenge latency threshold: 2000 ms; all 5/5 requests exceeded it.
+Configured SLO threshold: 3000 ms; 1/5 requests exceeded it.
+TTFT: 50 ms per request. HTTP status: 200 for all 5 requests.
+Source: application structured logs for this challenge run; challenge query text omitted.

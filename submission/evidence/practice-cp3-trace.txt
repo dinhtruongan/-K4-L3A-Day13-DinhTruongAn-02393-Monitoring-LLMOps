@@ -1,0 +1,9 @@
+PRACTICE ONLY — NOT OFFICIAL K4-L3A CHALLENGE EVIDENCE
+correlation_id: req-9e31f5b0
+trace_id: 0d7b5bea913db34c544f3d13ad69c66a
+Langfuse root observation: lab-agent-run
+Root duration: 3.620 s
+Root status: DEFAULT, no status message
+Root observation count for this trace: 1 (no retrieval/generation child observations yet)
+The correlation ID in the root observation metadata matches the selected log request.
+Diagnosis limit: root duration confirms a slow request, but there is no child span to attribute time by step.

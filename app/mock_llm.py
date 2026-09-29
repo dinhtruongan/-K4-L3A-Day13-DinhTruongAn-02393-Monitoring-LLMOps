@@ -5,6 +5,9 @@ import time
 from dataclasses import dataclass
 
 from .incidents import STATE
+from typing import Any
+
+from .tracing import get_langfuse_client, observe
 
 
 @dataclass
@@ -25,7 +28,13 @@ class FakeLLM:
     def __init__(self, model: str = "claude-sonnet-4-5") -> None:
         self.model = model
 
-    def generate(self, prompt: str) -> FakeResponse:
+    @observe(
+        name="fake-llm-generation",
+        as_type="generation",
+        capture_input=False,
+        capture_output=False,
+    )
+    def generate(self, prompt: str, *, langfuse_prompt: Any | None = None) -> FakeResponse:
         started = time.perf_counter()
         time.sleep(0.05)  # mô phỏng thời điểm token đầu tiên sẵn sàng
         ttft_ms = int((time.perf_counter() - started) * 1000)
@@ -38,6 +47,18 @@ class FakeLLM:
             "Starter answer. You should improve this output logic and add better quality checks. "
             "Use retrieved context and keep responses concise."
         )
+        client = get_langfuse_client()
+        input_cost = (input_tokens / 1_000_000) * 3
+        output_cost = (output_tokens / 1_000_000) * 15
+        generation_attributes = {
+            "model": self.model,
+            "usage_details": {"input": input_tokens, "output": output_tokens},
+            "cost_details": {"input": input_cost, "output": output_cost},
+            "metadata": {"ttft_ms": ttft_ms},
+        }
+        if langfuse_prompt is not None:
+            generation_attributes["prompt"] = langfuse_prompt
+        client.update_current_generation(**generation_attributes)
         return FakeResponse(
             text=answer,
             usage=FakeUsage(input_tokens, output_tokens),

@@ -1,0 +1,20 @@
+Challenge ID: day13-k4-l3a-monitoring-llmops-v1
+Langfuse project: day13-k4-l3a-02393
+Trace lookup: Langfuse Observations API v2
+Challenge query text and raw trace I/O omitted.
+Correlation ID -> trace ID:
+- req-1d98fe1a -> fd8caa5fd9696fd956730c80ed452208
+- req-595f6993 -> 3f8bc7de30f20ba14d8135290615e840
+- req-96c3ebd0 -> 69fd18f0115e08569c55501d5b630e6e
+- req-b0bd42f7 -> ce3c2206d3aa5352373109ba4f99d36c
+- req-dd03e80c -> 75472a1746aecef828fc31789dd13416
+
+Chosen correlation_id: req-1d98fe1a
+Trace ID: fd8caa5fd9696fd956730c80ed452208
+Observation tree (duration, seconds):
+- fake-llm-generation [GENERATION] id=94c07ff3c1c041a7 parent=f454918445bad084 duration=0.159s totalUsage=164 cost_details={"input": 0.000102, "output": 0.00195, "total": 0.002052}
+- retriever [RETRIEVER] id=a6bcf4323d8c1df8 parent=f454918445bad084 duration=2.501s retrieval_status=success totalUsage=0
+- lab-agent-run [AGENT] id=f454918445bad084 parent=none duration=3.618s totalUsage=0
+
+Root duration: 3.618s; retriever observation duration: 2.501s; fake-llm-generation duration: 0.159s.
+Root metadata correlation_id matches the structured log.

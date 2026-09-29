@@ -1,0 +1,8 @@
+PRACTICE ONLY — NOT OFFICIAL K4-L3A CHALLENGE EVIDENCE
+Selected slow request: req-9e31f5b0
+request_received: 2026-09-29T07:42:38.508828Z
+response_sent:   2026-09-29T07:42:42.130635Z
+latency_ms: 3619
+tool_name: retrieval
+tool_success: true
+PII fields are omitted; the source log was PII-scrubbed.
