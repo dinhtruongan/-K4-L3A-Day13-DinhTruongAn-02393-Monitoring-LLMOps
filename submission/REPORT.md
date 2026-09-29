@@ -24,9 +24,9 @@
 | 04 Structured log | [04-structured-log.txt](evidence/04-structured-log.txt) |
 | 05 PII redaction | [05-pii-redaction.txt](evidence/05-pii-redaction.txt) |
 | 06 Trace list (10 trace CP2) | [cp2-waterfall-observations.txt](evidence/cp2-waterfall-observations.txt) |
-| 07 Trace waterfall | [cp2-waterfall-observations.txt](evidence/cp2-waterfall-observations.txt) |
-| 08 Trace metadata, token và cost | [cp2-waterfall-observations.txt](evidence/cp2-waterfall-observations.txt) |
-| 09 Prompt versions và labels | [prompt-versioning-results.txt](evidence/prompt-versioning-results.txt) |
+| 07 Trace waterfall | [07-trace-waterfall.png](evidence/07-trace-waterfall.png) |
+| 08 Trace metadata, token và cost | [08-trace-metadata.png](evidence/08-trace-metadata.png) |
+| 09 Prompt versions và labels | [09-prompt-versions.png](evidence/09-prompt-versions.png), [prompt-versioning-results.txt](evidence/prompt-versioning-results.txt) |
 | 10 Promote/rollback production | [prompt-versioning-results.txt](evidence/prompt-versioning-results.txt) |
 | 11 Dashboard runtime | ![Dashboard overview](evidence/11-dashboard-overview.png) |
 | Dashboard runtime snapshot (text) | [11-dashboard-overview.txt](evidence/11-dashboard-overview.txt) |
@@ -115,7 +115,7 @@ Practice evidence (không thay thế evidence challenge chính thức): `evidenc
 - **Metrics → Logs → Traces:** dashboard phát hiện latency bất thường, correlation ID chọn đúng log request, trace cho thấy thời lượng retrieval và generation.
 - **Prompt/version/cost/SLO:** labels tách baseline/candidate/production; generation observation ghi model, prompt version, tokens và cost. Error budget 0.5% giúp định lượng request xấu được phép trong chu kỳ 28 ngày.
 - **Bài học:** hash user ID và redact nội dung phải xảy ra trước khi telemetry rời ứng dụng; prompt rollback cần trace v2 và v1 để xác minh.
-- **Hạn chế còn lại:** trace/prompt evidence đang ở dạng output text từ project cá nhân, chưa có screenshot giao diện Langfuse; Slack channel trong YAML là contract chưa được nối alert receiver thật; quality score hiện là heuristic proxy.
+- **Hạn chế còn lại:** trace list và prompt rollback còn được hỗ trợ bằng output text; ảnh Langfuse hiện có cho thấy waterfall/metadata và prompt versions. Slack channel trong YAML là contract chưa được nối alert receiver thật; quality score hiện là heuristic proxy.
 
 ## 9. Checklist trước khi nộp
 
