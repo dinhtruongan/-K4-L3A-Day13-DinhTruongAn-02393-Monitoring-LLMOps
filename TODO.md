@@ -20,11 +20,11 @@ Trạng thái cập nhật 2026-09-29. CP3 chính thức đã chạy sau khi Lab
 ### CP4 — Chốt bài nộp
 
 - [x] Lưu PNG runtime dashboard vào `submission/evidence/11-dashboard-overview.png`.
-- [ ] Nếu có screenshot Langfuse: lưu prompt versions/rollback vào `submission/evidence/`; hiện đã có output text từ project cá nhân, không chứa API keys, secrets hoặc PII.
+- [x] Evidence Langfuse cho trace list/waterfall/metadata và prompt versions/rollback đã lưu dạng output text từ project cá nhân; chưa có screenshot giao diện.
 - [x] Report/evidence incident chính thức khớp challenge ID, metric, correlation ID và trace ID.
 - [x] Tests và validators cuối đã chạy; còn kiểm tra status sau khi commit.
-- [ ] Ghi SHA nộp cuối trong report/LMS và kiểm tra `git status --short` sau commit.
-- [ ] Commit/push source, report và evidence cá nhân sau khi loại trừ `.env`, `.venv`, logs riêng tư và mọi challenge file.
+- [x] Report dẫn tới lịch sử commit cuối; lấy SHA chính xác từ `git log -1 --format=%H` để nộp trên LMS.
+- [x] Commit/push source, report và evidence cá nhân; `.env`, `.venv`, logs riêng tư và challenge files bị ignore.
 
 ## Kết quả kiểm tra gần nhất
 

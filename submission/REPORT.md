@@ -115,7 +115,7 @@ Practice evidence (không thay thế evidence challenge chính thức): `evidenc
 - **Metrics → Logs → Traces:** dashboard phát hiện latency bất thường, correlation ID chọn đúng log request, trace cho thấy thời lượng retrieval và generation.
 - **Prompt/version/cost/SLO:** labels tách baseline/candidate/production; generation observation ghi model, prompt version, tokens và cost. Error budget 0.5% giúp định lượng request xấu được phép trong chu kỳ 28 ngày.
 - **Bài học:** hash user ID và redact nội dung phải xảy ra trước khi telemetry rời ứng dụng; prompt rollback cần trace v2 và v1 để xác minh.
-- **Hạn chế còn lại:** prompt version/rollback screenshots còn cần lưu PNG; Slack channel trong YAML là contract chưa được nối alert receiver thật; quality score hiện là heuristic proxy.
+- **Hạn chế còn lại:** trace/prompt evidence đang ở dạng output text từ project cá nhân, chưa có screenshot giao diện Langfuse; Slack channel trong YAML là contract chưa được nối alert receiver thật; quality score hiện là heuristic proxy.
 
 ## 9. Checklist trước khi nộp
 
